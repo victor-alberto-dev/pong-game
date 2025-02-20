@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dssdee2vw838t"]
+
+[ext_resource type="Script" path="res://scenes/bola/bola.gd" id="1_nobd6"]
+[ext_resource type="Texture2D" uid="uid://dtiyb20xtrhf0" path="res://assets/sprites/bola.png" id="1_opvu8"]
+[ext_resource type="AudioStream" uid="uid://c15tm5txbpvt7" path="res://assets/sons/impacto-barreira.wav" id="3_gxmvn"]
+[ext_resource type="AudioStream" uid="uid://di82g50mg04ro" path="res://assets/sons/impacto-jogador.wav" id="4_3t7hf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ogl"]
+
+[node name="Bola" type="Area2D"]
+script = ExtResource("1_nobd6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_opvu8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x0ogl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="SomImpactoBarreira" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gxmvn")
+
+[node name="SomImpactoJogador" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3t7hf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
