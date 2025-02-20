@@ -20,11 +20,9 @@
 - **R:** Reseta o jogo e zera a pontuação
 - **ESC:** Fecha o jogo
 
-## 📦 Caminho para Baixar e Jogar
-- Clique na pasta Projetos-godot
-- builds
-- v1.1
-- Baixe o arquivo pong-na-godot.exe
+## 📥 Caminho para Download do Executável
+Você pode baixar o executável do jogo diretamente:
+[Baixar o jogo (Windows)](Projetos-godot/builds/v1.1/pong-na-godot.exe)
 
 ## 🛠️ Tecnologias Utilizadas
 - **Engine:** [Godot 4.3](https://godotengine.org)
